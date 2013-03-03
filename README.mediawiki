@@ -1,6 +1,0 @@
-= Purpose =
-The main purpose is to solve all 513 level of ''RunawayRobot'' from the site hacker.org.[br]
-
-The First attempt was Brute-Force, but this was known to fail around Level 80. 
-The solutions up to Level 130 were calculated using some sort of backtrack algorithm
-with map optimisation. 
