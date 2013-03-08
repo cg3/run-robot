@@ -9,7 +9,7 @@ class OfflineLoader implements Loader {
     }
 
     public function load() {
-        $gameArray = HtmlConverter::toArray($this->htmlFileContent);
-        return new RunRobotGameBoard($gameArray['FVboardX'], $gameArray['FVterrainString']);
+        $gameArray = HtmlConverter::toGameArray($this->htmlFileContent);
+        return $gameArray;
     }
 }
