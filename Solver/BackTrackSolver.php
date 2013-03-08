@@ -1,7 +1,8 @@
 <?php
 
-class BackTrackSolver implements Solver extends AbstractSolver {
-    protected function solve() {
+class BackTrackSolver implements Solver {
+
+    public function solve(GameArray $gameArray) {
         return $this->findeBackTrackLoesung();
     }
 
@@ -53,4 +54,23 @@ class BackTrackSolver implements Solver extends AbstractSolver {
         } catch (Exception $e) {}
         return true;
     }
+	
+	public function canRobotRunThrough($cmd)
+	{
+            $x = 0;
+            $y = 0;
+	    $cmdPos = 0;
+            while ($this->model->gameBoard->positionOnGameBoard($x, $y))
+		{
+			if ($cmd[$cmdPos++] == STEP_RIGHT)
+				$x++;
+			else
+				$y++;
+			if ($cmdPos == strlen($cmd))
+				$cmdPos = 0;
+			if ($this->model->gameBoard->isMine($x, $y))
+				return false;
+		}
+		return true;
+	} 
 }
