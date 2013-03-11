@@ -1,5 +1,5 @@
 <?php
 
 interface Solver {
-    function solve(GameArray $gameArray);
+    function solve(GameModel $gameArray);
 }

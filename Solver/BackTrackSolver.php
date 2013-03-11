@@ -2,7 +2,7 @@
 
 class BackTrackSolver implements Solver {
 
-    public function solve(GameArray $gameArray) {
+    public function solve(GameModel $gameArray) {
         return $this->findeBackTrackLoesung();
     }
 
