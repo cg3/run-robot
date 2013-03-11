@@ -8,10 +8,10 @@ class GameArray {
     }
 
     public function Terrain() {
-        return $this->CheckArray('FVterrainString');
+        return $this->ReturnIfKeyExists('FVterrainString');
     }
 
-    private function CheckArray($arrayKey) {
+    private function ReturnIfKeyExists($arrayKey) {
         if(array_key_exists($arrayKey, $this->gameArray)) {
             return $this->gameArray[$arrayKey];
         }
@@ -20,16 +20,16 @@ class GameArray {
     }
 
     public function MinSteps() {
-        return $this->CheckArray('FVinsMin');
+        return $this->ReturnIfKeyExists('FVinsMin');
     }
 
     public function MaxSteps() {
-        return $this->CheckArray('FVinsMax');
+        return $this->ReturnIfKeyExists('FVinsMax');
     }
 
 
     public function Level() {
-        return $this->CheckArray('FVlevel');
+        return $this->ReturnIfKeyExists('FVlevel');
     }
 }
 
